@@ -19,3 +19,18 @@ INSERT INTO Patient (patientGuid, firstName, lastName, dob, sexAtBirth) VALUES
 ("SOME-DUMMY-DATA", "Pepper", "Potts", "1990-01-31",  "F");
 
 SELECT * FROM Patient;
+
+
+USE msis_triage
+
+CREATE TABLE PatientVisit(
+  visitID INTEGER AUTO_INCREMENT PRIMARY KEY,
+  patientGuid VARCHAR(64),
+  visitDescription TEXT NOT NULL DEFAULT '',
+  visitDateUtc DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL DEFAULT '',
+  priority ENUM ('Low', 'Medium', 'High') NOT NULL DEFAULT 'Low',
+  FOREIGN KEY patientGuid REFERENCES Patient (patientGuid)
+);
+
+INSERT INTO Patient(visitID, patientGuid, visitDescription, visitDateUtc, priority) VALUES
+(1,"SOME-REALLY-LONG-1234", "Flu", ,"High");
