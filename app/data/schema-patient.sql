@@ -29,7 +29,6 @@ CREATE TABLE PatientVisit(
   visitDescription TEXT NOT NULL DEFAULT '',
   visitDateUtc DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL DEFAULT '',
   priority ENUM ('Low', 'Medium', 'High') NOT NULL DEFAULT 'Low',
-  FOREIGN KEY patientGuid REFERENCES Patient (patientGuid)
 );
 
 INSERT INTO Patient(visitID, patientGuid, visitDescription, visitDateUtc, priority) VALUES
