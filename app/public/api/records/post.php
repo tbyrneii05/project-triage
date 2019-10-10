@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
-=======
 use Ramsey\Uuid\Uuid;
->>>>>>> upstream/red-10-07
 
 // Step 0: Validate data
 
@@ -12,17 +9,6 @@ $db = DbConnection::getConnection();
 // Step 2: Prepare & run the query
 $stmt = $db->prepare(
   'INSERT INTO Patient
-<<<<<<< HEAD
-  (patientGuid, firstName, lastName, DOB, sexAtBirth)
-  VALUES (?,?,?,?,?)'
-);
-
-$stmt->execute([
-  $_POST['patientGuid'],
-  $_POST['firstName'],
-  $_POST['lastName'],
-  $_POST['DOB'],
-=======
     (patientGuid, firstName, lastName, dob, sexAtBirth)
   VALUES (?,?,?,?,?)'
 );
@@ -34,7 +20,6 @@ $stmt->execute([
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['dob'],
->>>>>>> upstream/red-10-07
   $_POST['sexAtBirth'],
 ]);
 
