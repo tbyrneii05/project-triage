@@ -19,9 +19,15 @@ var patientRecordsApp = new Vue({
         }
       })
       .then( response => response.json() )
+<<<<<<< HEAD
       .then( json => { patientRecordsApp.recordPatient = json})
       .catch( err => {
         console.error('WORK TRIAGE ERROR:');
+=======
+      .then( json => { patientRecordsApp.patients.push(json[0]) })
+      .catch( err => {
+        console.error('RECORD POST ERROR:');
+>>>>>>> upstream/red-10-07
         console.error(err);
       })
       this.handleReset();

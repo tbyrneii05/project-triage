@@ -6,7 +6,7 @@
         "name": "Tom Gregory"
     }],
     "require": {
-      "ramsey/uuid":"^3.8"
+      "ramsey/uuid": "^3.8"
     },
     "autoload": {
         "classmap": ["class/DbConnection.php"]
